@@ -1,0 +1,1026 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "$$hashKey": "object:7",
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 4,
+  "links": [],
+  "panels": [
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorPostfix": false,
+      "colorPrefix": false,
+      "colorValue": true,
+      "colors": [
+        "#73BF69",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:2280",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:2281",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "pluginVersion": "6.7.2",
+      "postfix": " Seconds",
+      "postfixFontSize": "30%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "server_up_time_total",
+          "interval": "",
+          "legendFormat": "Rate of Inference",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Server up time (seconds)",
+      "transparent": true,
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:2283",
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 3,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 15,
+        "w": 7,
+        "x": 3,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 9,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 4,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 3,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Number_0_classification_outcome_total",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "0",
+          "refId": "A"
+        },
+        {
+          "expr": "Number_1_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "1",
+          "refId": "B"
+        },
+        {
+          "expr": "Number_2_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "2",
+          "refId": "C"
+        },
+        {
+          "expr": "Number_3_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "3",
+          "refId": "D"
+        },
+        {
+          "expr": "Number_4_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "4",
+          "refId": "E"
+        },
+        {
+          "expr": "Number_5_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "5",
+          "refId": "F"
+        },
+        {
+          "expr": "Number_6_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "6",
+          "refId": "G"
+        },
+        {
+          "expr": "Number_7_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "7",
+          "refId": "H"
+        },
+        {
+          "expr": "Number_8_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "8",
+          "refId": "I"
+        },
+        {
+          "expr": "Number_9_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "9",
+          "refId": "J"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Classification Labels Seen",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2100",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2101",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": null,
+      "decimals": 2,
+      "fontSize": "60%",
+      "format": "short",
+      "gridPos": {
+        "h": 15,
+        "w": 14,
+        "x": 10,
+        "y": 0
+      },
+      "id": 10,
+      "interval": null,
+      "legend": {
+        "header": "",
+        "percentage": true,
+        "show": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "maxDataPoints": 3,
+      "nullPointMode": "connected",
+      "pieType": "donut",
+      "pluginVersion": "6.7.2",
+      "strokeWidth": "0",
+      "targets": [
+        {
+          "expr": "Number_0_classification_outcome_total",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "0",
+          "refId": "A"
+        },
+        {
+          "expr": "Number_1_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "1",
+          "refId": "B"
+        },
+        {
+          "expr": "Number_2_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "2",
+          "refId": "C"
+        },
+        {
+          "expr": "Number_3_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "3",
+          "refId": "D"
+        },
+        {
+          "expr": "Number_4_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "4",
+          "refId": "E"
+        },
+        {
+          "expr": "Number_5_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "5",
+          "refId": "F"
+        },
+        {
+          "expr": "Number_6_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "6",
+          "refId": "G"
+        },
+        {
+          "expr": "Number_7_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "7",
+          "refId": "H"
+        },
+        {
+          "expr": "Number_8_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "8",
+          "refId": "I"
+        },
+        {
+          "expr": "Number_9_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "9",
+          "refId": "J"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Classification Labels Seen (Series)",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 3
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "none"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto"
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "requests_handled_total",
+          "interval": "",
+          "legendFormat": "Requests Handled",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Requests Handled",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 6
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [
+              {
+                "from": "",
+                "id": 1,
+                "operator": "",
+                "text": "",
+                "to": "",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                }
+              ]
+            },
+            "unit": "reqps"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto"
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "rate(requests_handled_total[5m])",
+          "interval": "",
+          "legendFormat": "Rate of Inference",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Throughput",
+      "transparent": true,
+      "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": null,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 9
+      },
+      "id": 11,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "$$hashKey": "object:3793",
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "$$hashKey": "object:3794",
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "pluginVersion": "6.7.2",
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "system_cpu_count",
+          "interval": "",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "System Cores",
+      "transparent": true,
+      "type": "singlestat",
+      "valueFontSize": "200%",
+      "valueMaps": [
+        {
+          "$$hashKey": "object:3796",
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "avg"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 7,
+        "w": 3,
+        "x": 0,
+        "y": 12
+      },
+      "id": 4,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 2,
+            "mappings": [
+              {
+                "from": "",
+                "id": 1,
+                "operator": "",
+                "text": "",
+                "to": "",
+                "type": 1,
+                "value": ""
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "dark-red",
+                  "value": 100
+                }
+              ]
+            },
+            "title": "%"
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "system_cpu_usage * 100",
+          "interval": "",
+          "legendFormat": "Total CPU Usage",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Total CPU Usage (%)",
+      "transparent": true,
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "fill": 3,
+      "fillGradient": 5,
+      "gridPos": {
+        "h": 15,
+        "w": 7,
+        "x": 3,
+        "y": 15
+      },
+      "hiddenSeries": false,
+      "id": 8,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 4,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 3,
+      "points": true,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Number_0_classification_outcome_total",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "0",
+          "refId": "A"
+        },
+        {
+          "expr": "Number_1_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "1",
+          "refId": "B"
+        },
+        {
+          "expr": "Number_2_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "2",
+          "refId": "C"
+        },
+        {
+          "expr": "Number_3_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "3",
+          "refId": "D"
+        },
+        {
+          "expr": "Number_4_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "4",
+          "refId": "E"
+        },
+        {
+          "expr": "Number_5_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "5",
+          "refId": "F"
+        },
+        {
+          "expr": "Number_6_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "6",
+          "refId": "G"
+        },
+        {
+          "expr": "Number_7_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "7",
+          "refId": "H"
+        },
+        {
+          "expr": "Number_8_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "8",
+          "refId": "I"
+        },
+        {
+          "expr": "Number_9_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "9",
+          "refId": "J"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Classification Labels Seen (Log base 2)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2100",
+          "format": "short",
+          "label": null,
+          "logBase": 2,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2101",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "cacheTimeout": null,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "decimals": 2,
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 15,
+        "w": 14,
+        "x": 10,
+        "y": 15
+      },
+      "hiddenSeries": false,
+      "id": 12,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "total": true,
+        "values": true
+      },
+      "lines": false,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pluginVersion": "6.7.2",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Number_0_classification_outcome_total",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "0",
+          "refId": "A"
+        },
+        {
+          "expr": "Number_1_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "1",
+          "refId": "B"
+        },
+        {
+          "expr": "Number_2_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "2",
+          "refId": "C"
+        },
+        {
+          "expr": "Number_3_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "3",
+          "refId": "D"
+        },
+        {
+          "expr": "Number_4_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "4",
+          "refId": "E"
+        },
+        {
+          "expr": "Number_5_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "5",
+          "refId": "F"
+        },
+        {
+          "expr": "Number_6_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "6",
+          "refId": "G"
+        },
+        {
+          "expr": "Number_7_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "7",
+          "refId": "H"
+        },
+        {
+          "expr": "Number_8_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "8",
+          "refId": "I"
+        },
+        {
+          "expr": "Number_9_classification_outcome_total",
+          "interval": "",
+          "legendFormat": "9",
+          "refId": "J"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Classification Labels Seen (Series)",
+      "tooltip": {
+        "shared": false,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "series",
+        "name": null,
+        "show": true,
+        "values": [
+          "total"
+        ]
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:280",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:281",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 11,
+        "w": 3,
+        "x": 0,
+        "y": 19
+      },
+      "id": 5,
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "defaults": {
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 500
+                }
+              ]
+            }
+          },
+          "overrides": [],
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showUnfilled": true
+      },
+      "pluginVersion": "6.7.2",
+      "targets": [
+        {
+          "expr": "jvm_memory_used_bytes / 1024 / 1024",
+          "interval": "",
+          "legendFormat": "{{id}}",
+          "refId": "A"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Memory Usage (MB)",
+      "transparent": true,
+      "type": "bargauge"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-5m",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "Pipeline Metrics",
+  "uid": "lP_JcnHWz",
+  "variables": {
+    "list": []
+  },
+  "version": 25
+}

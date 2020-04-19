@@ -1,0 +1,52 @@
+{
+  "servingConfig" : {
+    "createLoggingEndpoints" : false,
+    "httpPort" : 9008,
+    "listenHost" : "localhost",
+    "logTimings" : false,
+    "metricTypes" : [ "CLASS_LOADER", "JVM_MEMORY", "JVM_GC", "PROCESSOR", "JVM_THREAD", "LOGGING_METRICS", "NATIVE", "CLASSIFICATION" ],
+    "metricsConfigurations" : [ { 
+	  "@type" : "ClassificationMetricsConfig", 
+	  "classificationLabels" : [ "Number_0", "Number_1", "Number_2", "Number_3", "Number_4", "Number_5", "Number_6", "Number_7", "Number_8", "Number_9" ] 
+    } ],
+    "outputDataFormat" : "JSON"
+  },
+  "steps" : [ {
+    "@type" : "ImageLoadingStep",
+    "dimensionsConfigs" : { "input" : [ 28, 28, 1 ] },
+    "imageProcessingInitialLayout" : "NCHW",
+    "imageProcessingRequiredLayout" : "NCHW",
+    "imageTransformProcesses" : { },
+    "inputColumnNames" : { },
+    "inputNames" : [ "input" ],
+    "inputSchemas" : { },
+    "originalImageHeight" : 0,
+    "originalImageWidth" : 0,
+    "outputColumnNames" : { },
+    "outputNames" : [ "output" ],
+    "outputSchemas" : { },
+    "updateOrderingBeforeTransform" : false
+  }, {
+    "@type" : "ModelStep",
+    "inputColumnNames" : { },
+    "inputNames" : [ "input" ],
+    "inputSchemas" : { },
+    "modelConfig" : {
+      "@type" : "KerasConfig",
+      "modelConfigType" : {
+        "modelLoadingPath" : "keras_mnist_model.h5",
+        "modelType" : "KERAS"
+      }
+    },
+    "outputColumnNames" : { },
+    "outputNames" : [ "dense2" ],
+    "outputSchemas" : { },
+    "parallelInferenceConfig" : {
+      "batchLimit" : 32,
+      "inferenceMode" : "BATCHED",
+      "maxTrainEpochs" : 1,
+      "queueLimit" : 64,
+      "workers" : 1
+    }
+  } ]
+}
