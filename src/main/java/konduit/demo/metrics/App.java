@@ -39,6 +39,7 @@ public class App
         InferenceConfiguration inferenceConfiguration = InferenceConfiguration.builder()
                 .servingConfig(ServingConfig.builder()
                         .httpPort(9008)
+                        .listenHost("0.0.0.0")
                         .metricTypes(Arrays.asList(CLASS_LOADER, JVM_MEMORY, JVM_GC, PROCESSOR, JVM_THREAD, LOGGING_METRICS, NATIVE, CLASSIFICATION))
                         .metricsConfigurations(Collections.singletonList(
                                 new ClassificationMetricsConfig(Arrays.asList(

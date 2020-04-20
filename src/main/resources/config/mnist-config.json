@@ -2,7 +2,7 @@
   "servingConfig" : {
     "createLoggingEndpoints" : false,
     "httpPort" : 9008,
-    "listenHost" : "localhost",
+    "listenHost" : "0.0.0.0",
     "logTimings" : false,
     "metricTypes" : [ "CLASS_LOADER", "JVM_MEMORY", "JVM_GC", "PROCESSOR", "JVM_THREAD", "LOGGING_METRICS", "NATIVE", "CLASSIFICATION" ],
     "metricsConfigurations" : [ { 
