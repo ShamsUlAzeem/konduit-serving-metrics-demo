@@ -30,6 +30,6 @@ services:
       - "9090:9090"
 
   konduit-demo:
-     image:  local/konduit-demo:v2
+     image:  local/konduit-demo:v1
      ports:
        - "9008:9008"
