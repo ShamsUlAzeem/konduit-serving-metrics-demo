@@ -34,7 +34,7 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
 
-        String INPUT_NAME = "input";
+        String inputName = "input";
 
         InferenceConfiguration inferenceConfiguration = InferenceConfiguration.builder()
                 .servingConfig(ServingConfig.builder()
@@ -49,12 +49,14 @@ public class App
                                         "Number_9"))))
                         .build())
                 .step(ImageLoadingStep.builder()
-                        .inputName(INPUT_NAME)
-                        .dimensionsConfig(INPUT_NAME, new Long[] { 28L, 28L, 1L })
+                        .inputName(inputName)
+                        .imageProcessingInitialLayout("NCHW")
+                        .imageProcessingRequiredLayout("NHWC")
+                        .dimensionsConfig(inputName, new Long[] { 28L, 28L, 1L })
                         .outputName("output")
                         .build())
                 .step(KerasStep.builder()
-                        .inputName(INPUT_NAME)
+                        .inputName(inputName)
                         .outputName("dense2")
                         .path(new ClassPathResource("models/keras_mnist_model.h5").getFile().getAbsolutePath())
                         .build())
@@ -83,7 +85,7 @@ public class App
                                             1 + new Random(System.currentTimeMillis()).nextInt(10)));
 
                             try {
-                                Response response = given().port(9008).multiPart(INPUT_NAME,
+                                Response response = given().port(9008).multiPart(inputName,
                                         new ClassPathResource(
                                                 String.format("test_files/test_input_number_%s.png", label)
                                         ).getFile())
@@ -94,7 +96,6 @@ public class App
                             } catch (Exception exception) {
                                 exception.printStackTrace();
                             }
-
                         }
                     } else {
                         handler.cause().printStackTrace();
