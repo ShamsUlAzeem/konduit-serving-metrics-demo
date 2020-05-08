@@ -4,10 +4,8 @@ import ai.konduit.serving.InferenceConfiguration;
 import ai.konduit.serving.config.ServingConfig;
 import ai.konduit.serving.config.metrics.impl.ClassificationMetricsConfig;
 import ai.konduit.serving.deploy.DeployKonduitServing;
-import ai.konduit.serving.model.KerasConfig;
-import ai.konduit.serving.model.ModelConfigType;
 import ai.konduit.serving.pipeline.step.ImageLoadingStep;
-import ai.konduit.serving.pipeline.step.ModelStep;
+import ai.konduit.serving.pipeline.step.model.KerasStep;
 import com.jayway.restassured.response.Response;
 import io.micrometer.prometheus.PrometheusConfig;
 import io.micrometer.prometheus.PrometheusMeterRegistry;
@@ -17,7 +15,7 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.micrometer.MicrometerMetricsOptions;
 import io.vertx.micrometer.VertxPrometheusOptions;
 import io.vertx.micrometer.backends.BackendRegistries;
-import org.nd4j.linalg.io.ClassPathResource;
+import org.nd4j.common.io.ClassPathResource;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -36,6 +34,8 @@ public class App
 {
     public static void main( String[] args ) throws IOException {
 
+        String INPUT_NAME = "input";
+
         InferenceConfiguration inferenceConfiguration = InferenceConfiguration.builder()
                 .servingConfig(ServingConfig.builder()
                         .httpPort(9008)
@@ -49,20 +49,15 @@ public class App
                                         "Number_9"))))
                         .build())
                 .step(ImageLoadingStep.builder()
-                        .inputName("input")
-                        .dimensionsConfig("input", new Long[] { 28L, 28L, 1L })
+                        .inputName(INPUT_NAME)
+                        .dimensionsConfig(INPUT_NAME, new Long[] { 28L, 28L, 1L })
                         .outputName("output")
                         .build())
-                .step(ModelStep.builder()
-                        .inputName("input")
+                .step(KerasStep.builder()
+                        .inputName(INPUT_NAME)
                         .outputName("dense2")
-                        .modelConfig(
-                                KerasConfig.builder()
-                                        .modelConfigType(ModelConfigType.keras(
-                                                new ClassPathResource("models/keras_mnist_model.h5").getFile().getAbsolutePath())
-                                        )
-                                        .build()
-                        ).build())
+                        .path(new ClassPathResource("models/keras_mnist_model.h5").getFile().getAbsolutePath())
+                        .build())
                 .build();
 
         MicrometerMetricsOptions micrometerMetricsOptions = new MicrometerMetricsOptions()
@@ -88,7 +83,7 @@ public class App
                                             1 + new Random(System.currentTimeMillis()).nextInt(10)));
 
                             try {
-                                Response response = given().port(9008).multiPart("input",
+                                Response response = given().port(9008).multiPart(INPUT_NAME,
                                         new ClassPathResource(
                                                 String.format("test_files/test_input_number_%s.png", label)
                                         ).getFile())
