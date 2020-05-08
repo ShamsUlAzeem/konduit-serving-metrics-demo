@@ -6,9 +6,10 @@ RUN apt-get -o Acquire::Check-Valid-Until=false -o Acquire::Check-Date=false upd
 ENV HOME /home/konduit
 WORKDIR ${HOME}
 
+ENV MAVEN_OPTS -Denforcer.skip=true
 RUN mkdir ${HOME}/build \
     && cd ${HOME}/build \
-    && git clone --single-branch --branch sa/grafana_demo https://github.com/KonduitAI/konduit-serving \
+    && git clone --single-branch --branch master https://github.com/KonduitAI/konduit-serving \
     && cd konduit-serving \
     && python build_jar.py --os linux-x86_64 \
     && cd ..
